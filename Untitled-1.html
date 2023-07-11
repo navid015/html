@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Search</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+    <script>
+        function performGoogleSearch() {
+            var query = document.getElementById("search-input").value;
+            if (query !== "") {
+                var url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+                window.location.href = url;
+            }
+        }
+
+        function performFeelingLuckySearch() {
+            var query = document.getElementById("search-input").value;
+            if (query !== "") {
+                var url = "https://www.google.com/search?q=" + encodeURIComponent(query) + "&btnI";
+                window.location.href = url;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img class="logo" src="https://freepngimg.com/thumb/google/153884-logo-google-png-download-free.png" alt="Google Logo">
+        <br>
+        <input id="search-input" type="text">
+        <br>
+        <button onclick="performGoogleSearch()">Google Search</button>
+        <button onclick="performFeelingLuckySearch()">I'm feeling lucky</button>
+    </div>
+</body>
+</html>
